@@ -91,7 +91,7 @@ contract FLPCrowdSale is Ownable {
         );
         require(amount > 0, "Amount is zero");
         require(
-            token.balanceOf(address(this)) > amount,
+            token.balanceOf(address(this)) >= amount,
             "Insufficient account balance"
         );
         SafeERC20.safeTransferFrom(usdtToken, msg.sender, _wallet, USDTAmount);
